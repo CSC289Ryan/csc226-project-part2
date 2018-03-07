@@ -29,6 +29,11 @@
                     <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents" CssClass="btn btn-primary btn-block" />
                 </div>
             </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-9">
+                    <asp:ListBox ID="lstIncidents" runat="server" CssClass="form-control"></asp:ListBox>
+                </div>
+            </div>
 
         </form>
     </div>
