@@ -124,7 +124,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit"  Enabled="false"
-                        CssClass="btn btn-primary btn-block" ValidationGroup="Incident"/>
+                        CssClass="btn btn-primary btn-block" ValidationGroup="Incident" OnClick="btnSubmit_Click"/>
                 </div>
             </div>
             <div class="col-sm-offset-1">

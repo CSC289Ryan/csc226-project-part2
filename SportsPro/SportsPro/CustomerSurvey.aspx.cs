@@ -9,6 +9,9 @@ using System.Data;
 namespace SportsPro {
     public partial class CustomerSurvey : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            if (!IsPostBack) {
+
+            }
             lblNoIncidents.Visible = false;
         }
 
@@ -41,6 +44,7 @@ namespace SportsPro {
         }
 
         private void EnableSurveyFields() {
+            lstIncidents.Enabled = true;
             rblResponseTime.Enabled = true;
             rblEfficiency.Enabled = true;
             rblResolution.Enabled = true;
@@ -52,6 +56,7 @@ namespace SportsPro {
         }
 
         private void DisableSurveyFields() {
+            lstIncidents.Enabled = false;
             rblResponseTime.Enabled = false;
             rblEfficiency.Enabled = false;
             rblResolution.Enabled = false;
@@ -60,6 +65,26 @@ namespace SportsPro {
             rdoEmail.Enabled = false;
             rdoPhone.Enabled = false;
             btnSubmit.Enabled = false;
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e) {
+            Models.Survey s = new Models.Survey();
+            int idx = lstIncidents.SelectedIndex;
+            ListItem i = lstIncidents.SelectedItem;
+            if (i.Value == "None") {
+                
+            } else {
+                s.CustomerID = int.Parse(txtCustomerID.Text);
+                s.IncidentID = int.Parse(i.Value.ToString());
+                s.ResponseTime = int.Parse(rblResponseTime.SelectedValue);
+                s.TechEfficiency = int.Parse(rblEfficiency.SelectedValue);
+                s.Resolution = int.Parse(rblResolution.SelectedValue);
+                s.Comments = txtComments.Text;
+                s.Contact = chkContactMe.Checked;
+                s.ContactBy = rdoEmail.Checked ? "Email" : "Phone";
+                Session["ContactCustomer"] = s.Contact;
+                Response.Redirect("~/SurveyComplete.aspx");
+            }
         }
     }
 }
