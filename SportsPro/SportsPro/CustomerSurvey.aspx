@@ -20,7 +20,7 @@
         <form id="form1" runat="server" class="form-horizontal">
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
-                    <asp:Label ID="Label1" runat="server" Text="Enter your customer ID:" CssClass="control-label"></asp:Label>
+                    <asp:Label ID="lblID" runat="server" Text="Enter your customer ID:" CssClass="control-label"></asp:Label>
                 </div>
                 <div class="col-sm-2">
                     <asp:TextBox ID="txtCustomerID" runat="server" CssClass="form-control"></asp:TextBox>
@@ -32,6 +32,47 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-9">
                     <asp:ListBox ID="lstIncidents" runat="server" CssClass="form-control"></asp:ListBox>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-11">
+                    <asp:Label ID="lblRate" runat="server" Text="Please rate this incident by the following categories:" 
+                        Font-Bold="True"></asp:Label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="lblResponseTime" runat="server" Text="Response time:" CssClass="control-label"></asp:Label>
+                </div>
+                <div class="col-sm-9">
+                    <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Horizontal">
+                        <asp:ListItem>Not satisfied</asp:ListItem>
+                        <asp:ListItem>Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem>Satisfied</asp:ListItem>
+                        <asp:ListItem>Completely satisfied</asp:ListItem>
+                    </asp:RadioButtonList>
+                </div>
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="lblEfficiency" runat="server" Text="Technician Efficiency:" CssClass="control-label"></asp:Label>
+                </div>
+                <div class="col-sm-9">
+                    <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Horizontal">
+                        <asp:ListItem>Not satisfied</asp:ListItem>
+                        <asp:ListItem>Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem>Satisfied</asp:ListItem>
+                        <asp:ListItem>Completely satisfied</asp:ListItem>
+                    </asp:RadioButtonList>
+                </div>
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="lblResolution" runat="server" Text="Problem resolution:" CssClass="control-label"></asp:Label>
+                </div>
+                <div class="col-sm-9">
+                    <asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Horizontal">
+                        <asp:ListItem>Not satisfied</asp:ListItem>
+                        <asp:ListItem>Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem>Satisfied</asp:ListItem>
+                        <asp:ListItem>Completely satisfied</asp:ListItem>
+                    </asp:RadioButtonList>
                 </div>
             </div>
 
