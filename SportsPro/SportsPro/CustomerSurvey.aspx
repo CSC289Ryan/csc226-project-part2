@@ -97,6 +97,11 @@
                         GroupName="ContactBy" Text="Contact by phone"/>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary btn-block" />
+                </div>
+            </div>
         </form>
     </div>
 </body>
