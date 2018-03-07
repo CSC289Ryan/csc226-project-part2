@@ -106,6 +106,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
     <Content Include="CustomerDisplay.aspx" />
+    <Content Include="CustomerSurvey.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -151,8 +152,17 @@
     <Compile Include="CustomerDisplay.aspx.designer.cs">
       <DependentUpon>CustomerDisplay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerSurvey.aspx.cs">
+      <DependentUpon>CustomerSurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerSurvey.aspx.designer.cs">
+      <DependentUpon>CustomerSurvey.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerList.cs" />
+    <Compile Include="Models\Incident.cs" />
+    <Compile Include="Models\Survey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
