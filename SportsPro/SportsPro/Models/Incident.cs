@@ -10,12 +10,12 @@ namespace SportsPro.Models {
         public string ProductCode { get; set; }
         public int TechID { get; set; }
         public DateTime DateOpened { get; set; }
-        public DateTime DateClose { get; set; }
+        public DateTime DateClosed{ get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
         public string CustomerIncidentDisplay() {
-            string formatted = "";
+            string formatted = $"Incident for product {ProductCode} closed {DateClosed}";
             return formatted;
         }
     }
