@@ -18,9 +18,21 @@
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
         <form id="form1" runat="server" class="form-horizontal">
-            <div class="col-sm-offset-1 col-sm-2">
-                <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" 
-                    PostBackUrl="~/CustomerSurvey.aspx" CssClass="btn btn-block btn-primary"/>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-9">
+                    <asp:Label ID="lblThanks" runat="server" Text="Thank you for your feedback!"
+                        CssClass="text-primary control-label" Font-Size="Large" Font-Bold="true"></asp:Label>
+                </div>
+                <div class="col-sm-offset-1 col-sm-9">
+                    <asp:Label ID="lblMsg" runat="server" 
+                        CssClass="text-primary control-label"></asp:Label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" 
+                        PostBackUrl="~/CustomerSurvey.aspx" CssClass="btn btn-block btn-primary"/>
+                </div>
             </div>
         </form>
     </div>
