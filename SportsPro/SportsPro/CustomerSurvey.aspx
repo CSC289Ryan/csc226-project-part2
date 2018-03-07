@@ -46,10 +46,10 @@
                 </div>
                 <div class="col-sm-9">
                     <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem>Not satisfied</asp:ListItem>
-                        <asp:ListItem>Somewhat satisfied</asp:ListItem>
-                        <asp:ListItem>Satisfied</asp:ListItem>
-                        <asp:ListItem>Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="1">Not satisfied</asp:ListItem>
+                        <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem Value="3">Satisfied</asp:ListItem>
+                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
                 <div class="col-sm-offset-1 col-sm-2">
@@ -57,10 +57,10 @@
                 </div>
                 <div class="col-sm-9">
                     <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem>Not satisfied</asp:ListItem>
-                        <asp:ListItem>Somewhat satisfied</asp:ListItem>
-                        <asp:ListItem>Satisfied</asp:ListItem>
-                        <asp:ListItem>Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="1">Not satisfied</asp:ListItem>
+                        <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem Value="3">Satisfied</asp:ListItem>
+                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
                 <div class="col-sm-offset-1 col-sm-2">
@@ -68,10 +68,10 @@
                 </div>
                 <div class="col-sm-9">
                     <asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem>Not satisfied</asp:ListItem>
-                        <asp:ListItem>Somewhat satisfied</asp:ListItem>
-                        <asp:ListItem>Satisfied</asp:ListItem>
-                        <asp:ListItem>Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="1">Not satisfied</asp:ListItem>
+                        <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem Value="3">Satisfied</asp:ListItem>
+                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
             </div>
@@ -81,6 +81,20 @@
                 </div>
                 <div class="col-sm-7">
                     <asp:TextBox ID="txtComments" runat="server" Rows="4" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-11">
+                    <asp:CheckBox ID="chkContactMe" Text="Please contact me to discuss this incident"
+                        Checked="true" runat="server"/>
+                </div>
+                <div class="col-sm-offset-2">
+                    <asp:RadioButton ID="rdoEmail" runat="server"
+                        Checked="true" GroupName="ContactBy" Text="Contact by email"/>
+                </div>
+                <div class="col-sm-offset-2">
+                    <asp:RadioButton ID="rdoPhone" runat="server"
+                        GroupName="ContactBy" Text="Contact by phone"/>
                 </div>
             </div>
         </form>
