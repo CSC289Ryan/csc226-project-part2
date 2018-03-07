@@ -17,21 +17,34 @@
             <h1>SportsPro</h1>
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
-        <form id="form1" runat="server" class="form-horizontal">
+        <form id="form1" runat="server" class="form-horizontal" defaultfocus="txtCustomerID">
             <div class="form-group">
+                <div class="col-sm-offset-1">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="CustomerID"
+                        HeaderText="Please fix these problems:" CssClass="text-danger"/>
+                </div>
                 <div class="col-sm-offset-1 col-sm-2">
                     <asp:Label ID="lblID" runat="server" Text="Enter your customer ID:" CssClass="control-label"></asp:Label>
                 </div>
                 <div class="col-sm-2">
                     <asp:TextBox ID="txtCustomerID" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCustomerID" runat="server" ErrorMessage="Customer ID is required"
+                        ValidationGroup="CustomerID" Text="*" ControlToValidate="txtCustomerID"
+                        CssClass="text-danger"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cmpCustomerID" runat="server"  ControlToValidate="txtCustomerID"
+                        ErrorMessage="Enter an integer ID" ValidationGroup="CustomerID" CssClass="text-danger"
+                        Operator="DataTypeCheck" Type="Integer" Text="*" ></asp:CompareValidator>
                 </div>
                 <div class="col-sm-2">
                     <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents" CssClass="btn btn-primary btn-block" />
                 </div>
+                <div class="col-sm-offset-1 col-sm-9">
+                    <asp:Label ID="lblNoIncidents" runat="server" Visible="false"></asp:Label>
+                </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-9">
-                    <asp:ListBox ID="lstIncidents" runat="server" CssClass="form-control"></asp:ListBox>
+                    <asp:ListBox ID="lstIncidents" runat="server" CssClass="form-control" Enabled="false"></asp:ListBox>
                 </div>
             </div>
             <div class="form-group">
@@ -45,7 +58,7 @@
                     <asp:Label ID="lblResponseTime" runat="server" Text="Response time:" CssClass="control-label"></asp:Label>
                 </div>
                 <div class="col-sm-9">
-                    <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Horizontal">
+                    <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Horizontal" Enabled="false">
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
@@ -56,7 +69,7 @@
                     <asp:Label ID="lblEfficiency" runat="server" Text="Technician Efficiency:" CssClass="control-label"></asp:Label>
                 </div>
                 <div class="col-sm-9">
-                    <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Horizontal">
+                    <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Horizontal" Enabled="false">
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
@@ -67,7 +80,7 @@
                     <asp:Label ID="lblResolution" runat="server" Text="Problem resolution:" CssClass="control-label"></asp:Label>
                 </div>
                 <div class="col-sm-9">
-                    <asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Horizontal">
+                    <asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Horizontal" Enabled="false">
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
@@ -80,26 +93,28 @@
                     <asp:Label ID="lblComments" runat="server" Text="Additional comments:"></asp:Label>
                 </div>
                 <div class="col-sm-7">
-                    <asp:TextBox ID="txtComments" runat="server" Rows="4" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="txtComments" runat="server" Rows="4" CssClass="form-control"
+                        TextMode="MultiLine" Enabled="false"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-11">
                     <asp:CheckBox ID="chkContactMe" Text="Please contact me to discuss this incident"
-                        Checked="true" runat="server"/>
+                        Checked="true" runat="server" Enabled="false"/>
                 </div>
                 <div class="col-sm-offset-2">
-                    <asp:RadioButton ID="rdoEmail" runat="server"
+                    <asp:RadioButton ID="rdoEmail" runat="server" Enabled="false"
                         Checked="true" GroupName="ContactBy" Text="Contact by email"/>
                 </div>
                 <div class="col-sm-offset-2">
-                    <asp:RadioButton ID="rdoPhone" runat="server"
+                    <asp:RadioButton ID="rdoPhone" runat="server" Enabled="false"
                         GroupName="ContactBy" Text="Contact by phone"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary btn-block" />
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit"  Enabled="false"
+                        CssClass="btn btn-primary btn-block" />
                 </div>
             </div>
         </form>
