@@ -21,7 +21,7 @@ namespace SportsPro {
             incidentsTable.RowFilter = string.Format("CustomerID = '{0}' And DateClosed Is Not Null",
                 txtCustomerID.Text);
             if (incidentsTable.Count == 0) {
-                lblNoIncidents.Text = "No incidents found for that customer ID.";
+                lblNoIncidents.Text = "No closed incidents found for that customer ID.";
                 lblNoIncidents.Visible = true;
                 DisableSurveyFields();
             } else {
@@ -69,12 +69,11 @@ namespace SportsPro {
 
         protected void btnSubmit_Click(object sender, EventArgs e) {
             Models.Survey s = new Models.Survey();
-            int idx = lstIncidents.SelectedIndex;
             ListItem i = lstIncidents.SelectedItem;
-            if (i.Value == "None") {
-                
+            if (i.Value == "None" || string.IsNullOrWhiteSpace(txtCustomerID.Text)) {
+                // don't submit
             } else {
-                s.CustomerID = int.Parse(txtCustomerID.Text);
+                s.CustomerID = int.Parse(txtCustomerID.Text); // User could change this before submit. BUG
                 s.IncidentID = int.Parse(i.Value.ToString());
                 s.ResponseTime = int.Parse(rblResponseTime.SelectedValue);
                 s.TechEfficiency = int.Parse(rblEfficiency.SelectedValue);
