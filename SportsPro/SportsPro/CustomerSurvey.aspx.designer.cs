@@ -40,15 +40,6 @@ namespace SportsPro {
         protected global::System.Web.UI.WebControls.Label lblID;
         
         /// <summary>
-        /// txtCustomerID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerID;
-        
-        /// <summary>
         /// rfvCustomerID control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace SportsPro {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cmpCustomerID;
+        
+        /// <summary>
+        /// txtCustomerID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCustomerID;
         
         /// <summary>
         /// btnGetIncidents control.

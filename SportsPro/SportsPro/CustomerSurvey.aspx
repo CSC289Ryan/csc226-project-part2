@@ -18,25 +18,26 @@
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
         <form id="form1" runat="server" class="form-horizontal" defaultfocus="txtCustomerID">
+            <div class="col-sm-offset-1">
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="CustomerID"
+                    HeaderText="Please fix these problems:" CssClass="text-danger"/>
+            </div>
             <div class="form-group">
-                <div class="col-sm-offset-1">
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="CustomerID"
-                        HeaderText="Please fix these problems:" CssClass="text-danger"/>
-                </div>
                 <div class="col-sm-offset-1 col-sm-2">
                     <asp:Label ID="lblID" runat="server" Text="Enter your customer ID:" CssClass="control-label"></asp:Label>
+                    <asp:RequiredFieldValidator ID="rfvCustomerID" runat="server" ErrorMessage="Customer ID is required"
+                        Text="*" ControlToValidate="txtCustomerID" ValidationGroup="CustomerID"
+                        CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cmpCustomerID" runat="server"  ControlToValidate="txtCustomerID"
+                        ErrorMessage="Enter an integer ID" CssClass="text-danger" ValidationGroup="CustomerID"
+                        Operator="DataTypeCheck" Type="Integer" Text="*" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div class="col-sm-2">
                     <asp:TextBox ID="txtCustomerID" runat="server" CssClass="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvCustomerID" runat="server" ErrorMessage="Customer ID is required"
-                        ValidationGroup="CustomerID" Text="*" ControlToValidate="txtCustomerID"
-                        CssClass="text-danger"></asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="cmpCustomerID" runat="server"  ControlToValidate="txtCustomerID"
-                        ErrorMessage="Enter an integer ID" ValidationGroup="CustomerID" CssClass="text-danger"
-                        Operator="DataTypeCheck" Type="Integer" Text="*" ></asp:CompareValidator>
                 </div>
                 <div class="col-sm-2">
-                    <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents" CssClass="btn btn-primary btn-block" />
+                    <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents"
+                        CssClass="btn btn-primary btn-block" ValidationGroup="CustomerID"/>
                 </div>
                 <div class="col-sm-offset-1 col-sm-9">
                     <asp:Label ID="lblNoIncidents" runat="server" Visible="false"></asp:Label>
