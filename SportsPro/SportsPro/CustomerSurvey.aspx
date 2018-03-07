@@ -20,7 +20,7 @@
         <form id="form1" runat="server" class="form-horizontal" defaultfocus="txtCustomerID">
             <div class="col-sm-offset-1">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="CustomerID"
-                    HeaderText="Please fix these problems:" CssClass="text-danger"/>
+                    CssClass="text-danger"/>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
@@ -46,6 +46,11 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-9">
                     <asp:ListBox ID="lstIncidents" runat="server" CssClass="form-control" Enabled="false"></asp:ListBox>
+                </div>
+                <div class="col-sm-2">
+                    <asp:RequiredFieldValidator ID="rfvIncidents" runat="server"
+                        ControlToValidate="lstIncidents" CssClass="text-danger" Text="*"
+                        ErrorMessage="Select an incident from the list" ValidationGroup="Incident"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group">
@@ -115,8 +120,12 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit"  Enabled="false"
-                        CssClass="btn btn-primary btn-block" />
+                        CssClass="btn btn-primary btn-block" ValidationGroup="Incident"/>
                 </div>
+            </div>
+            <div class="col-sm-offset-1">
+                <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="Incident"
+                    CssClass="text-danger"/>
             </div>
         </form>
     </div>
