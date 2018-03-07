@@ -15,7 +15,7 @@ namespace SportsPro.Models {
         public string Description { get; set; }
 
         public string CustomerIncidentDisplay() {
-            string formatted = $"Incident for product {ProductCode} closed {DateClosed}";
+            string formatted = $"Incident for product {ProductCode} closed {DateClosed.ToShortDateString()} ({Title})";
             return formatted;
         }
     }

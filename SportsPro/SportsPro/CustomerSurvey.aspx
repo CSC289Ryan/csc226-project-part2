@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-sm-2">
                     <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents"
-                        CssClass="btn btn-primary btn-block" ValidationGroup="CustomerID"/>
+                        CssClass="btn btn-primary btn-block" ValidationGroup="CustomerID" OnClick="btnGetIncidents_Click"/>
                 </div>
                 <div class="col-sm-offset-1 col-sm-9">
                     <asp:Label ID="lblNoIncidents" runat="server" Visible="false"></asp:Label>
@@ -46,6 +46,10 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-9">
                     <asp:ListBox ID="lstIncidents" runat="server" CssClass="form-control" Enabled="false"></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                        ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                        SelectCommand="Select IncidentID, CustomerID, ProductCode, TechID, DateOpened,
+                        DateClosed, Title From Incidents Order By DateClosed"></asp:SqlDataSource>
                 </div>
                 <div class="col-sm-2">
                     <asp:RequiredFieldValidator ID="rfvIncidents" runat="server"
@@ -68,7 +72,7 @@
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
-                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="4" Selected="True">Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
                 <div class="col-sm-offset-1 col-sm-2">
@@ -79,7 +83,7 @@
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
-                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="4" Selected="True">Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
                 <div class="col-sm-offset-1 col-sm-2">
@@ -90,7 +94,7 @@
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
-                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="4" Selected="True">Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
             </div>
