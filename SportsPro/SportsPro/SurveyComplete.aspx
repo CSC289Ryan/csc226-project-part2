@@ -18,7 +18,10 @@
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
         <form id="form1" runat="server" class="form-horizontal">
-
+            <div class="col-sm-offset-1 col-sm-2">
+                <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" 
+                    PostBackUrl="~/CustomerSurvey.aspx" CssClass="btn btn-block btn-primary"/>
+            </div>
         </form>
     </div>
 </body>
