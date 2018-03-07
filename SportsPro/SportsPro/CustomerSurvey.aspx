@@ -18,6 +18,17 @@
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
         <form id="form1" runat="server" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="Label1" runat="server" Text="Enter your customer ID:" CssClass="control-label"></asp:Label>
+                </div>
+                <div class="col-sm-2">
+                    <asp:TextBox ID="txtCustomerID" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col-sm-2">
+                    <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents" CssClass="btn btn-primary btn-block" />
+                </div>
+            </div>
 
         </form>
     </div>
