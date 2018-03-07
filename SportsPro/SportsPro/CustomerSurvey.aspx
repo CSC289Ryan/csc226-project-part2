@@ -75,7 +75,14 @@
                     </asp:RadioButtonList>
                 </div>
             </div>
-
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="lblComments" runat="server" Text="Additional comments:"></asp:Label>
+                </div>
+                <div class="col-sm-7">
+                    <asp:TextBox ID="txtComments" runat="server" Rows="4" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                </div>
+            </div>
         </form>
     </div>
 </body>
