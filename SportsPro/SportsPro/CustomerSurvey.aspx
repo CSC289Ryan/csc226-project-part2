@@ -9,7 +9,7 @@
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/site.css" rel="stylesheet" />
-    <title></title>
+    <title>Project 2-A: Survey Customer</title>
 </head>
 <body>
     <div class="container">
@@ -40,7 +40,7 @@
                         CssClass="btn btn-primary btn-block" ValidationGroup="CustomerID" OnClick="btnGetIncidents_Click"/>
                 </div>
                 <div class="col-sm-offset-1 col-sm-9">
-                    <asp:Label ID="lblNoIncidents" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblNoIncidents" runat="server" Visible="false" CssClass="text-danger"></asp:Label>
                 </div>
             </div>
             <div class="form-group">
