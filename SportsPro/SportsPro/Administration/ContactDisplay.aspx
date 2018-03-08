@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ContactDisplay.aspx.cs" Inherits="SportsPro.ContactDisplay"
-    MasterPageFile="~/SportsMaster.Master" Title="Project 2-B: Display Contacts" %>
+    MasterPageFile="~/SportsMaster.Master" Title="Project 1-B: Display Contacts" %>
 <asp:Content ID="ContactDisplay" ContentPlaceHolderID="mainPlaceholder" runat="server">
             <div class="row col-sm-offset-1">
                 <div class="form-group">
@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <asp:Button ID="btnAddCustomers" runat="server" Text="Select Additional Customers" 
-                            CssClass="btn btn-primary" PostBackUrl="~/CustomerDisplay.aspx"/>
+                            CssClass="btn btn-primary" PostBackUrl="~/Administration/CustomerDisplay"/>
                     </div>
                     <div class="col-sm-12">
                         <asp:Label ID="lblMessage" runat="server" EnableViewState="false"

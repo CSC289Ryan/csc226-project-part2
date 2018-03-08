@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomerDisplay.aspx.cs" Inherits="SportsPro.CustomerDisplay"
-    MasterPageFile="~/SportsMaster.Master" Title="Project 2-B: Select Contacts" %>
+    MasterPageFile="~/SportsMaster.Master" Title="Project 1-A: Select Contacts" %>
 <asp:Content ID="SelectContacts" ContentPlaceHolderID="mainPlaceholder" runat="server">
          <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
@@ -42,7 +42,7 @@
                 <asp:Button ID="btnAddContact" runat="server" Text="Add to Contact List"
                     CssClass="btn btn-primary" OnClick="btnAddContact_Click" />
                 <asp:Button ID="btnDisplayContacts" runat="server" Text="Display Contact List"
-                    CssClass="btn btn-primary" PostBackUrl="~/ContactDisplay.aspx" />
+                    CssClass="btn btn-primary" PostBackUrl="~/Administration/ContactDisplay" />
             </div>
             <div class="col-sm-offset-1">
                 <div class="form-group">

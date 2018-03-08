@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SurveyComplete.aspx.cs" Inherits="SportsPro.SurveyComplete"
-    MasterPageFile="~/SportsMaster.Master" Title="Project 2-B: Survey Complete" %>
+    MasterPageFile="~/SportsMaster.Master" Title="Project 2-A: Survey Complete" %>
 <asp:Content ID="SelectContacts" ContentPlaceHolderID="mainPlaceholder" runat="server">
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-9">
@@ -14,7 +14,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
                     <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" 
-                        PostBackUrl="~/CustomerSurvey.aspx" CssClass="btn btn-block btn-primary"/>
+                        PostBackUrl="~/CustomerSupport/CustomerSurvey" CssClass="btn btn-block btn-primary"/>
                 </div>
             </div>
 </asp:Content>

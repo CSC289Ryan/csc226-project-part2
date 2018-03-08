@@ -9,9 +9,7 @@ using System.Data;
 namespace SportsPro {
     public partial class CustomerSurvey : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-
-            }
+            this.Page.Form.DefaultFocus = txtCustomerID.ClientID;
             lblNoIncidents.Visible = false;
         }
 
@@ -38,7 +36,7 @@ namespace SportsPro {
                     lstIncidents.Items.Add(new ListItem(i.CustomerIncidentDisplay(), i.IncidentID.ToString()));
                 }
                 lstIncidents.Focus();
-                lstIncidents.Items[0].Selected = true;
+                //lstIncidents.Items[0].Selected = true; // Commented to let validator trigger on no selection
                 EnableSurveyFields();
             }
         }
@@ -70,8 +68,12 @@ namespace SportsPro {
         protected void btnSubmit_Click(object sender, EventArgs e) {
             Models.Survey s = new Models.Survey();
             ListItem i = lstIncidents.SelectedItem;
-            if (i.Value == "None" || string.IsNullOrWhiteSpace(txtCustomerID.Text)) {
-                // don't submit
+            if (i.Value == "None") {
+                // didn't pick an incident
+                rfvIncidents.IsValid = false;
+            } else if (string.IsNullOrWhiteSpace(txtCustomerID.Text)) {
+                // removed text after getting incidents
+                rfvCustomerID.IsValid = false;
             } else {
                 s.CustomerID = int.Parse(txtCustomerID.Text); // User could change this before submit. BUG
                 s.IncidentID = int.Parse(i.Value.ToString());
@@ -82,7 +84,7 @@ namespace SportsPro {
                 s.Contact = chkContactMe.Checked;
                 s.ContactBy = rdoEmail.Checked ? "Email" : "Phone";
                 Session["ContactCustomer"] = s.Contact;
-                Response.Redirect("~/SurveyComplete.aspx");
+                Response.Redirect("~/CustomerSupport/SurveyComplete");
             }
         }
     }

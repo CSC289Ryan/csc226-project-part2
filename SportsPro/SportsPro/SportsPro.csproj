@@ -75,6 +75,10 @@
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -98,21 +102,30 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administration\CustomerMaintenance.aspx" />
+    <Content Include="Administration\IncidentDisplay.aspx" />
+    <Content Include="Administration\ProductMaintenance.aspx" />
+    <Content Include="Administration\TechnicianIncidentSummary.aspx" />
+    <Content Include="Administration\TechnicianMaintenance.aspx" />
     <Content Include="App_Data\create_TechSupport.sql" />
     <Content Include="App_Data\TechSupport.mdf" />
     <Content Include="App_Data\TechSupport_log.ldf">
       <DependentUpon>TechSupport.mdf</DependentUpon>
     </Content>
-    <Content Include="ContactDisplay.aspx" />
+    <Content Include="Administration\ContactDisplay.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
-    <Content Include="CustomerDisplay.aspx" />
+    <Content Include="Administration\CustomerDisplay.aspx" />
+    <Content Include="CustomerIncidentDisplay.aspx" />
     <Content Include="CustomerSurvey.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="IncidentUpdate.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -127,12 +140,14 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="ProductRegistration.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="SportsMaster.Master" />
+    <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,16 +157,53 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SurveyComplete.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactDisplay.aspx.cs">
+    <Compile Include="Administration\CustomerMaintenance.aspx.cs">
+      <DependentUpon>CustomerMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CustomerMaintenance.aspx.designer.cs">
+      <DependentUpon>CustomerMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\IncidentDisplay.aspx.cs">
+      <DependentUpon>IncidentDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\IncidentDisplay.aspx.designer.cs">
+      <DependentUpon>IncidentDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ProductMaintenance.aspx.cs">
+      <DependentUpon>ProductMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\ProductMaintenance.aspx.designer.cs">
+      <DependentUpon>ProductMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\TechnicianIncidentSummary.aspx.cs">
+      <DependentUpon>TechnicianIncidentSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\TechnicianIncidentSummary.aspx.designer.cs">
+      <DependentUpon>TechnicianIncidentSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\TechnicianMaintenance.aspx.cs">
+      <DependentUpon>TechnicianMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\TechnicianMaintenance.aspx.designer.cs">
+      <DependentUpon>TechnicianMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ContactDisplay.aspx.cs">
       <DependentUpon>ContactDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ContactDisplay.aspx.designer.cs">
+    <Compile Include="Administration\ContactDisplay.aspx.designer.cs">
       <DependentUpon>ContactDisplay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ContactUs.aspx.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,12 +211,19 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerDisplay.aspx.cs">
+    <Compile Include="Administration\CustomerDisplay.aspx.cs">
       <DependentUpon>CustomerDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerDisplay.aspx.designer.cs">
+    <Compile Include="Administration\CustomerDisplay.aspx.designer.cs">
       <DependentUpon>CustomerDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIncidentDisplay.aspx.cs">
+      <DependentUpon>CustomerIncidentDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerIncidentDisplay.aspx.designer.cs">
+      <DependentUpon>CustomerIncidentDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerSurvey.aspx.cs">
       <DependentUpon>CustomerSurvey.aspx</DependentUpon>
@@ -173,11 +232,42 @@
     <Compile Include="CustomerSurvey.aspx.designer.cs">
       <DependentUpon>CustomerSurvey.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IncidentUpdate.aspx.cs">
+      <DependentUpon>IncidentUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IncidentUpdate.aspx.designer.cs">
+      <DependentUpon>IncidentUpdate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerList.cs" />
     <Compile Include="Models\Incident.cs" />
     <Compile Include="Models\Survey.cs" />
+    <Compile Include="ProductRegistration.aspx.cs">
+      <DependentUpon>ProductRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductRegistration.aspx.designer.cs">
+      <DependentUpon>ProductRegistration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
     <Compile Include="SportsMaster.Master.cs">
       <DependentUpon>SportsMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,6 +281,13 @@
     </Compile>
     <Compile Include="SurveyComplete.aspx.designer.cs">
       <DependentUpon>SurveyComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

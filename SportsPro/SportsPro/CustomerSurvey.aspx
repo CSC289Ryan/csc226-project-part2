@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomerSurvey.aspx.cs" Inherits="SportsPro.CustomerSurvey"
-    MasterPageFile="~/SportsMaster.Master" Title="Project 2-B: Customer Survey" %>
+    MasterPageFile="~/SportsMaster.Master" Title="Project 2-A: Customer Survey" %>
 <asp:Content ID="SelectContacts" ContentPlaceHolderID="mainPlaceholder" runat="server">
             <div class="col-sm-offset-1">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="CustomerID"

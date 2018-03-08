@@ -78,7 +78,7 @@ namespace SportsPro {
         }
 
         private void NavigateToContactPage() {
-            Response.Redirect("~/ContactDisplay.aspx");
+            Response.Redirect("~/Administration/ContactDisplay");
         }
     }
 }
