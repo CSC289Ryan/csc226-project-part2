@@ -104,6 +104,7 @@
       <DependentUpon>TechSupport.mdf</DependentUpon>
     </Content>
     <Content Include="ContactDisplay.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -131,6 +132,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="SportsMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,6 +151,13 @@
     </Compile>
     <Compile Include="ContactDisplay.aspx.designer.cs">
       <DependentUpon>ContactDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerDisplay.aspx.cs">
       <DependentUpon>CustomerDisplay.aspx</DependentUpon>
@@ -169,6 +178,13 @@
     <Compile Include="Models\Incident.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SportsMaster.Master.cs">
+      <DependentUpon>SportsMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SportsMaster.Master.designer.cs">
+      <DependentUpon>SportsMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="SurveyComplete.aspx.cs">
       <DependentUpon>SurveyComplete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
