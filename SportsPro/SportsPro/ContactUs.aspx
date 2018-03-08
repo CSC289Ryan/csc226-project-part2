@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SportsMaster.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="SportsPro.ContactUs" %>
+﻿<%@ Page Title="Project 2-B: Contact Us" Language="C#" MasterPageFile="~/SportsMaster.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="SportsPro.ContactUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceholder" runat="server">
-    <title>Project 2-B: Contact Us</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainPlaceholder" runat="server">
     <div class="col-sm-offset-1">
