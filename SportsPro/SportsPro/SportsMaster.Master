@@ -5,13 +5,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Project 2-B: Master Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/site.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="headPlaceholder" runat="server">
+        <title>Project 2-B: Master Page</title>
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -21,7 +21,7 @@
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
         <form id="form1" runat="server" class="form-horizontal">
-            <nav>
+            <nav >
                 <asp:BulletedList ID="blNav" runat="server"
                     DisplayMode="HyperLink" CssClass="nav nav-pills" Font-Bold="true">
                     <asp:ListItem Value="~/CustomerDisplay.aspx">Display Customers</asp:ListItem>
@@ -29,15 +29,17 @@
                     <asp:ListItem Value="~/ContactUs.aspx">Contact Us</asp:ListItem>
                 </asp:BulletedList>
             </nav>
-            <main>
+            <main class="form-group">
                 <asp:ContentPlaceHolder ID="mainPlaceholder" runat="server">
         
                 </asp:ContentPlaceHolder>
             </main>
             <footer>
-                <div>
-                To contact us, call us at 800-555-0400 or email us at 
-                <asp:HyperLink ID="emailLink" runat="server" NavigateUrl="mailto:sportspro@sportsprosoftware.com">sportspro@sportsprosoftware.com</asp:HyperLink>
+                <div class="col-sm-12">
+                    <p>
+                        To contact us, call us at 800-555-0400 or email us at 
+                        <asp:HyperLink ID="emailLink" runat="server" NavigateUrl="mailto:sportspro@sportsprosoftware.com">sportspro@sportsprosoftware.com</asp:HyperLink>
+                    </p>
                 </div>
             </footer>
         </form>
