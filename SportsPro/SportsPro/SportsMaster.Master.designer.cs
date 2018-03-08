@@ -10,33 +10,51 @@
 namespace SportsPro {
     
     
-    public partial class SurveyComplete {
+    public partial class SportsMaster {
         
         /// <summary>
-        /// lblThanks control.
+        /// headPlaceholder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblThanks;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder headPlaceholder;
         
         /// <summary>
-        /// lblMsg control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnReturn control.
+        /// blNav control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReturn;
+        protected global::System.Web.UI.WebControls.BulletedList blNav;
+        
+        /// <summary>
+        /// mainPlaceholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainPlaceholder;
+        
+        /// <summary>
+        /// emailLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink emailLink;
     }
 }
