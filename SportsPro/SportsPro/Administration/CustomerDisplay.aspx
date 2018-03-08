@@ -42,7 +42,7 @@
                 <asp:Button ID="btnAddContact" runat="server" Text="Add to Contact List"
                     CssClass="btn btn-primary" OnClick="btnAddContact_Click" />
                 <asp:Button ID="btnDisplayContacts" runat="server" Text="Display Contact List"
-                    CssClass="btn btn-primary" PostBackUrl="~/ContactDisplay.aspx" />
+                    CssClass="btn btn-primary" PostBackUrl="~/Administration/ContactDisplay" />
             </div>
             <div class="col-sm-offset-1">
                 <div class="form-group">

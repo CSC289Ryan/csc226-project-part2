@@ -14,7 +14,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
                     <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" 
-                        PostBackUrl="~/CustomerSurvey.aspx" CssClass="btn btn-block btn-primary"/>
+                        PostBackUrl="~/CustomerSupport/CustomerSurvey" CssClass="btn btn-block btn-primary"/>
                 </div>
             </div>
 </asp:Content>

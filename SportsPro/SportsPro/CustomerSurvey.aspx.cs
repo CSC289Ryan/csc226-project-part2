@@ -82,7 +82,7 @@ namespace SportsPro {
                 s.Contact = chkContactMe.Checked;
                 s.ContactBy = rdoEmail.Checked ? "Email" : "Phone";
                 Session["ContactCustomer"] = s.Contact;
-                Response.Redirect("~/SurveyComplete.aspx");
+                Response.Redirect("~/CustomerSupport/SurveyComplete");
             }
         }
     }

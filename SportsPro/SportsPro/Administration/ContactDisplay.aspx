@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <asp:Button ID="btnAddCustomers" runat="server" Text="Select Additional Customers" 
-                            CssClass="btn btn-primary" PostBackUrl="~/CustomerDisplay.aspx"/>
+                            CssClass="btn btn-primary" PostBackUrl="~/Administration/CustomerDisplay"/>
                     </div>
                     <div class="col-sm-12">
                         <asp:Label ID="lblMessage" runat="server" EnableViewState="false"
