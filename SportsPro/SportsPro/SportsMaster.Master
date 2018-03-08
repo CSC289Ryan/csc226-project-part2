@@ -37,7 +37,7 @@
                                 role="button" aria-haspopup="true" aria-expanded="false">
                                 Customer Support<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><asp:HyperLink NavigateUrl="~/CustomerSupport/RegisterProducts" 
+                                <li><asp:HyperLink NavigateUrl="~/CustomerSupport/ProductRegistration" 
                                         runat="server">Register products</asp:HyperLink></li>
                                 <li><asp:HyperLink NavigateUrl="~/CustomerSupport/CustomerSurvey" 
                                         runat="server">Complete customer survey</asp:HyperLink></li>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomerDisplay.aspx.cs" Inherits="SportsPro.CustomerDisplay"
-    MasterPageFile="~/SportsMaster.Master" Title="Project 2-B: Select Contacts" %>
+    MasterPageFile="~/SportsMaster.Master" Title="Project 1-A: Select Contacts" %>
 <asp:Content ID="SelectContacts" ContentPlaceHolderID="mainPlaceholder" runat="server">
          <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-2">
